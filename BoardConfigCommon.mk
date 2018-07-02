@@ -145,6 +145,9 @@ TARGET_QCOM_NO_FM_FIRMWARE := true
 USE_DEVICE_SPECIFIC_GPS := true
 TARGET_NO_RPC := true
 
+# Extended Filesystem Support
+TARGET_EXFAT_DRIVER := sdfat
+
 # Filesystem
 TARGET_FS_CONFIG_GEN := $(VENDOR_PATH)/config.fs
 
@@ -193,7 +196,7 @@ TARGET_RIL_VARIANT := caf
 ifeq ($(AB_OTA_UPDATER), true)
 TARGET_RECOVERY_FSTAB := $(VENDOR_PATH)/rootdir/fstab_AB.qcom
 else
-TARGET_RECOVERY_FSTAB := $(VENDOR_PATH)/rootdir/recovery/fstab.qcom
+TARGET_RECOVERY_FSTAB := $(VENDOR_PATH)/rootdir/fstab.qcom
 endif
 
 # SELinux
